@@ -525,7 +525,8 @@ section {
   letter-spacing: 0.06em;
   text-align: right;
   line-height: 1.4;
-  padding-right: 16px;
+  padding-right: 14px;
+  white-space: nowrap;
 }
 
 .timeline-dot {
