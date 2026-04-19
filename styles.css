@@ -243,7 +243,7 @@ p { color: var(--text-dim); }
   height: 240px;
   object-fit: cover;
   object-position: center top;
-  border-radius: 8px;
+  border-radius: 50%;
   display: block;
   position: relative;
   z-index: 1;
@@ -258,7 +258,7 @@ p { color: var(--text-dim); }
   width: 240px;
   height: 240px;
   border: 2px solid var(--accent);
-  border-radius: 8px;
+  border-radius: 50%;
   z-index: 0;
   opacity: 0.4;
 }
