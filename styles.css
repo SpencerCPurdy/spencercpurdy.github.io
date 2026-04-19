@@ -1,25 +1,35 @@
 /* =============================================
    SPENCER PURDY — PORTFOLIO STYLES
+   Light Theme: White · Slate · Deep Blue
    ============================================= */
 
-/* CSS Variables */
 :root {
-  --bg:           #f0f2f5;          /* off-white background — cards pop against this */
-  --surface:      #ffffff;          /* pure white — cards, nav, pills                */
-  --surface-2:    #e8ecf3;          /* pressed/tag surface                           */
-  --border:       #dde2ee;          /* standard divider                              */
-  --border-light: #c5cedd;          /* stronger rule, used for emphasis              */
-  --accent:       #1a44c2;          /* deep cobalt — confident, not corporate        */
-  --accent-dim:   rgba(26, 68, 194, 0.08);
-  --accent-glow:  rgba(26, 68, 194, 0.18);
-  --accent-hover: #153799;          /* pressed/hover state                           */
-  --text:         #0b1222;          /* near-black navy — maximum contrast            */
-  --text-muted:   #52627a;          /* secondary — readable slate                    */
-  --text-dim:     #374357;          /* body copy — dark enough to read at length     */
-  --silver:       #7a8aa0;          /* decorative, subtle labels                     */
-  --shadow-sm:    0 1px 3px rgba(11, 18, 34, 0.06), 0 1px 2px rgba(11, 18, 34, 0.04);
-  --shadow-md:    0 4px 16px rgba(11, 18, 34, 0.08), 0 2px 6px rgba(11, 18, 34, 0.05);
-  --shadow-lg:    0 12px 40px rgba(11, 18, 34, 0.12), 0 4px 12px rgba(11, 18, 34, 0.06);
+  /* Backgrounds */
+  --bg:           #f8fafc;   /* page bg — barely off-white, not tinted         */
+  --surface:      #ffffff;   /* cards, nav — pure white; pops against bg        */
+  --surface-2:    #f1f5f9;   /* skill/course tag fills — cool light gray        */
+
+  /* Borders */
+  --border:       #e2e8f0;   /* standard dividers — clean slate-200             */
+  --border-light: #94a3b8;   /* stronger borders, separators — slate-400        */
+
+  /* Accent — rich deep blue, not generic corporate blue */
+  --accent:       #1d4ed8;
+  --accent-hover: #1e40af;
+  --accent-dim:   rgba(29, 78, 216, 0.07);
+  --accent-glow:  rgba(29, 78, 216, 0.15);
+
+  /* Text — high contrast, readable hierarchy */
+  --text:         #0f172a;   /* primary — near-black slate-900                  */
+  --text-dim:     #334155;   /* body paragraphs — slate-700, clearly readable   */
+  --text-muted:   #64748b;   /* metadata, labels — slate-500, still legible     */
+  --text-faint:   #94a3b8;   /* decorative only (numbers, tech tags) — slate-400*/
+
+  /* Shadows — neutral, not blue-tinted */
+  --shadow-sm:    0 1px 3px rgba(15, 23, 42, 0.07), 0 1px 2px rgba(15, 23, 42, 0.04);
+  --shadow-md:    0 4px 16px rgba(15, 23, 42, 0.09), 0 2px 4px rgba(15, 23, 42, 0.05);
+  --shadow-lg:    0 12px 36px rgba(15, 23, 42, 0.13), 0 4px 8px rgba(15, 23, 42, 0.06);
+
   --font-display: 'Syne', sans-serif;
   --font-body:    'Outfit', sans-serif;
   --font-mono:    'JetBrains Mono', monospace;
@@ -42,12 +52,12 @@ body {
 /* Scrollbar */
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb { background: var(--border-light); border-radius: 2px; }
-::-webkit-scrollbar-thumb:hover { background: var(--silver); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: var(--border-light); }
 
 /* Typography */
 h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.15; }
-.mono { font-family: var(--font-mono); }
+.mono  { font-family: var(--font-mono); }
 .accent { color: var(--accent); }
 a { color: inherit; text-decoration: none; }
 strong { color: var(--text); font-weight: 600; }
@@ -72,7 +82,7 @@ p { color: var(--text-dim); }
 }
 
 #navbar.scrolled {
-  background: rgba(240, 242, 245, 0.94);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border);
@@ -210,14 +220,14 @@ p { color: var(--text-dim); }
   display: flex;
   align-items: center;
   gap: 8px;
-  border: 1.5px solid var(--border-light);
-  color: var(--text-dim);
-  background: var(--surface);
+  border: 1.5px solid var(--border);
+  color: var(--text-muted);
   font-family: var(--font-mono);
   font-size: 0.82rem;
   padding: 12px 22px;
   border-radius: 4px;
   letter-spacing: 0.04em;
+  background: var(--surface);
   box-shadow: var(--shadow-sm);
   transition: border-color 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
 }
@@ -243,11 +253,11 @@ p { color: var(--text-dim); }
   height: 240px;
   object-fit: cover;
   object-position: center top;
-  border-radius: 50%;
+  border-radius: 8px;
   display: block;
   position: relative;
   z-index: 1;
-  filter: grayscale(8%) brightness(1.01);
+  filter: grayscale(5%);
   box-shadow: var(--shadow-lg);
 }
 
@@ -258,7 +268,7 @@ p { color: var(--text-dim); }
   width: 240px;
   height: 240px;
   border: 2px solid var(--accent);
-  border-radius: 50%;
+  border-radius: 8px;
   z-index: 0;
   opacity: 0.4;
 }
@@ -290,14 +300,14 @@ p { color: var(--text-dim); }
 
 .hero-scroll-hint span {
   font-size: 0.7rem;
-  color: var(--silver);
+  color: var(--text-faint);
   letter-spacing: 0.1em;
 }
 
 .scroll-line {
   width: 60px;
   height: 1px;
-  background: var(--border-light);
+  background: var(--border);
   position: relative;
   overflow: hidden;
 }
@@ -369,7 +379,7 @@ section {
 
 .skill-group-label {
   font-size: 0.72rem;
-  color: var(--silver);
+  color: var(--text-muted);
   letter-spacing: 0.1em;
   text-transform: uppercase;
   margin-bottom: 12px;
@@ -442,7 +452,7 @@ section {
 
 .project-number {
   font-size: 0.7rem;
-  color: var(--silver);
+  color: var(--text-faint);
   letter-spacing: 0.1em;
   margin-bottom: 10px;
 }
@@ -464,7 +474,7 @@ section {
   line-height: 1.3;
 }
 
-.project-title span { color: var(--text-dim); font-weight: 600; }
+.project-title span { color: var(--text-muted); font-weight: 600; }
 
 .project-desc {
   font-size: 0.9rem;
@@ -475,7 +485,7 @@ section {
 
 .project-tech {
   font-size: 0.7rem;
-  color: var(--silver);
+  color: var(--text-faint);
   letter-spacing: 0.06em;
   margin-bottom: 20px;
   padding-top: 16px;
@@ -495,10 +505,7 @@ section {
   transition: color 0.2s, opacity 0.2s;
 }
 
-.project-links a:hover {
-  color: var(--accent-hover);
-  opacity: 0.85;
-}
+.project-links a:hover { color: var(--accent-hover); }
 
 /* =============================================
    EXPERIENCE
@@ -564,7 +571,7 @@ section {
   background: var(--accent);
   border-radius: 50%;
   border: 2px solid var(--bg);
-  box-shadow: 0 0 0 1px var(--border-light);
+  box-shadow: 0 0 0 1px var(--border);
 }
 
 .timeline-role {
@@ -669,14 +676,14 @@ section {
   font-family: var(--font-display);
   font-size: 1.8rem;
   font-weight: 800;
-  color: var(--accent);
   line-height: 1.1;
   margin-bottom: 6px;
+  color: var(--accent);
 }
 
 .edu-stat-label {
   font-size: 0.68rem;
-  color: var(--silver);
+  color: var(--text-muted);
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
@@ -690,7 +697,7 @@ section {
 
 .coursework-label {
   font-size: 0.72rem;
-  color: var(--silver);
+  color: var(--text-muted);
   letter-spacing: 0.08em;
   padding-top: 5px;
   flex-shrink: 0;
@@ -751,13 +758,12 @@ section {
   padding-bottom: 2px;
   margin-bottom: 36px;
   letter-spacing: 0.02em;
-  transition: color 0.2s, border-color 0.2s, opacity 0.2s;
+  transition: color 0.2s, border-color 0.2s;
 }
 
 .contact-email:hover {
   color: var(--accent-hover);
   border-color: var(--accent-hover);
-  opacity: 0.85;
 }
 
 .contact-links {
@@ -797,7 +803,7 @@ footer {
 
 footer .mono {
   font-size: 0.75rem;
-  color: var(--silver);
+  color: var(--text-faint);
   letter-spacing: 0.08em;
 }
 
