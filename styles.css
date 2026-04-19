@@ -1,29 +1,28 @@
 /* =============================================
    SPENCER PURDY — PORTFOLIO STYLES
-   Light Blue · White · Silver
    ============================================= */
 
 /* CSS Variables */
 :root {
-  --bg:            #f4f7fd;          /* page background — pale blue-white       */
-  --surface:       #ffffff;          /* cards, navbar — pure white               */
-  --surface-2:     #eaf0f9;          /* skill/course tags — light silver-blue    */
-  --border:        #d5e1f0;          /* standard rule/border — soft blue-gray    */
-  --border-light:  #b8cce3;          /* stronger border / separators             */
-  --accent:        #2473cc;          /* primary blue — links, dots, highlights   */
-  --accent-dim:    rgba(36, 115, 204, 0.10);
-  --accent-glow:   rgba(36, 115, 204, 0.20);
-  --accent-hover:  #1a5baa;          /* darker blue for hover states             */
-  --silver:        #a8b8cc;          /* silver-blue — decorative / subtle text   */
-  --text:          #18243e;          /* primary text — deep navy                 */
-  --text-muted:    #6b7f9c;          /* secondary text — blue-gray               */
-  --text-dim:      #4a607e;          /* body paragraphs — mid blue-gray          */
-  --shadow-sm:     0 1px 4px rgba(36, 115, 204, 0.08);
-  --shadow-md:     0 4px 20px rgba(36, 115, 204, 0.12);
-  --shadow-lg:     0 12px 40px rgba(36, 115, 204, 0.16);
-  --font-display:  'Syne', sans-serif;
-  --font-body:     'Outfit', sans-serif;
-  --font-mono:     'JetBrains Mono', monospace;
+  --bg:           #f0f2f5;          /* off-white background — cards pop against this */
+  --surface:      #ffffff;          /* pure white — cards, nav, pills                */
+  --surface-2:    #e8ecf3;          /* pressed/tag surface                           */
+  --border:       #dde2ee;          /* standard divider                              */
+  --border-light: #c5cedd;          /* stronger rule, used for emphasis              */
+  --accent:       #1a44c2;          /* deep cobalt — confident, not corporate        */
+  --accent-dim:   rgba(26, 68, 194, 0.08);
+  --accent-glow:  rgba(26, 68, 194, 0.18);
+  --accent-hover: #153799;          /* pressed/hover state                           */
+  --text:         #0b1222;          /* near-black navy — maximum contrast            */
+  --text-muted:   #52627a;          /* secondary — readable slate                    */
+  --text-dim:     #374357;          /* body copy — dark enough to read at length     */
+  --silver:       #7a8aa0;          /* decorative, subtle labels                     */
+  --shadow-sm:    0 1px 3px rgba(11, 18, 34, 0.06), 0 1px 2px rgba(11, 18, 34, 0.04);
+  --shadow-md:    0 4px 16px rgba(11, 18, 34, 0.08), 0 2px 6px rgba(11, 18, 34, 0.05);
+  --shadow-lg:    0 12px 40px rgba(11, 18, 34, 0.12), 0 4px 12px rgba(11, 18, 34, 0.06);
+  --font-display: 'Syne', sans-serif;
+  --font-body:    'Outfit', sans-serif;
+  --font-mono:    'JetBrains Mono', monospace;
 }
 
 /* Reset */
@@ -66,16 +65,14 @@ p { color: var(--text-dim); }
    ============================================= */
 #navbar {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 0; left: 0; right: 0;
   z-index: 100;
   padding: 0;
   transition: all 0.3s ease;
 }
 
 #navbar.scrolled {
-  background: rgba(244, 247, 253, 0.94);
+  background: rgba(240, 242, 245, 0.94);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border);
@@ -118,7 +115,7 @@ p { color: var(--text-dim); }
 .nav-links a.active { color: var(--accent); }
 
 .nav-resume {
-  border: 1px solid var(--accent);
+  border: 1.5px solid var(--accent);
   color: var(--accent) !important;
   padding: 7px 16px;
   border-radius: 4px;
@@ -213,14 +210,14 @@ p { color: var(--text-dim); }
   display: flex;
   align-items: center;
   gap: 8px;
-  border: 1px solid var(--border-light);
+  border: 1.5px solid var(--border-light);
   color: var(--text-dim);
+  background: var(--surface);
   font-family: var(--font-mono);
   font-size: 0.82rem;
   padding: 12px 22px;
   border-radius: 4px;
   letter-spacing: 0.04em;
-  background: var(--surface);
   box-shadow: var(--shadow-sm);
   transition: border-color 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
 }
@@ -250,7 +247,7 @@ p { color: var(--text-dim); }
   display: block;
   position: relative;
   z-index: 1;
-  filter: grayscale(8%) brightness(1.02);
+  filter: grayscale(8%) brightness(1.01);
   box-shadow: var(--shadow-lg);
 }
 
@@ -263,7 +260,7 @@ p { color: var(--text-dim); }
   border: 2px solid var(--accent);
   border-radius: 8px;
   z-index: 0;
-  opacity: 0.45;
+  opacity: 0.4;
 }
 
 .hero-badge {
@@ -300,7 +297,7 @@ p { color: var(--text-dim); }
 .scroll-line {
   width: 60px;
   height: 1px;
-  background: var(--border);
+  background: var(--border-light);
   position: relative;
   overflow: hidden;
 }
@@ -372,7 +369,7 @@ section {
 
 .skill-group-label {
   font-size: 0.72rem;
-  color: var(--text-muted);
+  color: var(--silver);
   letter-spacing: 0.1em;
   text-transform: uppercase;
   margin-bottom: 12px;
@@ -567,7 +564,7 @@ section {
   background: var(--accent);
   border-radius: 50%;
   border: 2px solid var(--bg);
-  box-shadow: 0 0 0 1px var(--border);
+  box-shadow: 0 0 0 1px var(--border-light);
 }
 
 .timeline-role {
@@ -629,7 +626,6 @@ section {
 }
 
 .edu-card:hover { box-shadow: var(--shadow-md); }
-
 .edu-card.visible { opacity: 1; transform: translateY(0); }
 
 .edu-school {
@@ -673,14 +669,14 @@ section {
   font-family: var(--font-display);
   font-size: 1.8rem;
   font-weight: 800;
+  color: var(--accent);
   line-height: 1.1;
   margin-bottom: 6px;
-  color: var(--accent);
 }
 
 .edu-stat-label {
   font-size: 0.68rem;
-  color: var(--text-muted);
+  color: var(--silver);
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
@@ -694,7 +690,7 @@ section {
 
 .coursework-label {
   font-size: 0.72rem;
-  color: var(--text-muted);
+  color: var(--silver);
   letter-spacing: 0.08em;
   padding-top: 5px;
   flex-shrink: 0;
@@ -725,9 +721,7 @@ section {
 /* =============================================
    CONTACT
    ============================================= */
-#contact {
-  text-align: center;
-}
+#contact { text-align: center; }
 
 .contact-inner {
   max-width: 600px;
@@ -784,9 +778,7 @@ section {
 
 .contact-links a:hover { color: var(--accent); }
 
-.dot-sep {
-  color: var(--border-light);
-}
+.dot-sep { color: var(--border-light); }
 
 /* =============================================
    FOOTER
